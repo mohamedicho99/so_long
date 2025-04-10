@@ -1,0 +1,10 @@
+
+1, write a new function to allocate that map you calculated!
+	that y you counted is the number of char pointers you need to have!
+
+0, if file is empty
+(so basically you fill in the map until now!)
+
+2, check if it's rectangle!
+
+3, 

@@ -9,9 +9,9 @@ void	ft_check_ext(const char *s);
 
 typedef struct v_map
 {
-	struct v_map *next;
-	char *line;
+	char **map;
 	int x;
+	int y;
 } t_map;
 
 typedef struct map_vars
