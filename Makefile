@@ -1,7 +1,8 @@
 NAME = so_long
 CC = cc
 HEADER = so_long.h
-SRC = so_long.c
+SRC = so_long.c \
+	  src/ft_check_ext.c
 LIBFT = libft.a
 FT_PRINTF = libftprintf.a
 FT_PRINTF_DIR = ft_printf

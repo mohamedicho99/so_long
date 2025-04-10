@@ -2,69 +2,39 @@
 #include "ft_printf/ft_printf.h"
 #include "libft/libft.h"
 
-int ft_isspace(int c)
+void	ft_quit_2(t_vars *map)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	return (0);
+	ft_printf("{+} map file not valid!");
+	free(map);
+	exit(1);
 }
 
-void	ft_pc(const char *s)
+void	ft_fill_map(t_vars *map, char *fn)
 {
-	char *p;
-	char *t = ".ber";
-	int s_len;
-	p = ft_strchr(s, '.');
-	if (!p)
+	int fd = open(fn, O_RDONLY);
+	if (fd < 0)
 	{
-		ft_printf("{+} Please provide a valid map!\n");
+		ft_quit_2(map);
 		exit(1);
 	}
-	while (*p && *t)
-	{
-		if (*p != *t)
-		{
-			ft_printf("{+} Please provide a valid map!\n");
-			exit(1);
-		}
-		t++;
-		p++;
-	}
-	while (ft_isspace(*p))
-		p++;
-	if (*p != '\0' || *t != '\0')
-	{
-		ft_printf("{+} Please provide a valid map!\n");
-		exit(1);
-	}
-	s_len = ft_strlen(s);
-	if (s_len == 4)
-	{
-		ft_printf("{+} Please provide a valid map!\n");
-		exit(1);
-	}
-	p = ft_strchr(s, '.');
-	if (s_len > 4)
-	{
-		p--;
-		if (*p == '/')
-		{
-			ft_printf("{+} Please provide a valid map!\n");
-			exit(1);
-		}
-	}
+	ft_printf("re: %d\n", fd);
+	map->x = 1;
+	free(map);
 }
-
 
 int main(int argc, char **argv)
 {
+	t_vars *map_vars;
+
+	map_vars = malloc(sizeof(t_vars*));
 	if (argc != 2)
 	{
 		ft_printf("{+} Please, provide the correct number of arguments!\n");
 		exit(1);
 	}
 	char *s = argv[1];
-	ft_pc(s);
+	ft_check_ext(s);
+	ft_fill_map(map_vars, s);
 
 	return (0);
 }

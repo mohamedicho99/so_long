@@ -15,7 +15,7 @@
 static char	*ft_handle_eof(char **cache)
 {
 	char	*line;
-	size_t	l_cache;
+	int		l_cache;
 
 	l_cache = ft_strlen(*cache);
 	line = malloc(sizeof(char) * l_cache + 1);
@@ -51,8 +51,8 @@ static char	*reset_cache(char **cache)
 static char	*ft_strjoin(char *s1, char *s2)
 {
 	char	*n_str;
-	size_t	s1_len;
-	size_t	s2_len;
+	int		s1_len;
+	int		s2_len;
 
 	if ((!s1 || s1[0] == '\0') && (!s2 || s2[0] == '\0'))
 		return (NULL);

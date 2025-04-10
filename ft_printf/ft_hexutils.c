@@ -47,7 +47,7 @@ void	ft_putptr(unsigned long n, int *counter)
 void	ft_puthexptr(unsigned long n, int *counter)
 {
 	char	*num;
-	size_t	num_len;
+	int		num_len;
 	int		i;
 	char	hex[17];
 
@@ -71,7 +71,7 @@ void	ft_puthexptr(unsigned long n, int *counter)
 void	ft_puthex(unsigned int n, char con, int *counter)
 {
 	char	*num;
-	size_t	num_len;
+	int		num_len;
 	int		i;
 	char	hex[17];
 
