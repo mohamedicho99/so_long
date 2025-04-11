@@ -73,8 +73,10 @@ void	print_map(t_map *map)
 	while (map->map[i])
 	{
 		ft_printf("%s", map->map[i]);
+		free(map->map[i]);
 		i++;
 	}
+	free(map->map);
 }
 
 int main(int argc, char **argv)
