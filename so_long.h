@@ -14,10 +14,4 @@ typedef struct v_map
 	int y;
 } t_map;
 
-typedef struct map_vars
-{
-	int y;
-	int x;
-} t_vars;
-
 #endif

@@ -8,3 +8,10 @@
 2, check if it's rectangle!
 
 3, 
+
+______ current probelm
+
+i want to read from a file a map 
+
+and i just want to read everything at this point
+	=> let's just do this first and then check that we have no leaks
