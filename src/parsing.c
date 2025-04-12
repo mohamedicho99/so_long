@@ -43,6 +43,9 @@ void	ft_set_values(t_map *map)
 {
 	map->y = 0;
 	map->x = 0;
+	map->p = 0;
+	map->e = 0;
+	map->c = 0;
 	map->map = NULL;
 }
 
@@ -83,4 +86,6 @@ void	ft_parse(t_map *map, char *s)
 	ft_check_shape(map);
 	ft_valid_chars(map);
 	ft_check_wall(map);
+	ft_count_chars(map);
+	ft_check_chars(map);
 }

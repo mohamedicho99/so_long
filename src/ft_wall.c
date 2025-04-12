@@ -46,5 +46,5 @@ void	ft_check_wall(t_map *map)
 		i++;
 	}
 	ft_printf("map valid so far\n");
-	free_map(map);
+	//free_map(map);
 }

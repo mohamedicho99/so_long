@@ -22,6 +22,7 @@ void	print_map(t_map *map)
 		i++;
 	}
 	free(map->map);
+	free(map);
 }
 
 int main(int argc, char **argv)
@@ -36,7 +37,7 @@ int main(int argc, char **argv)
 	}
 	char *s = argv[1];
 	ft_parse(map, s);
-	print_map(map);
-	free(map);
+	//print_map(map);
+	free_map(map);
 	return (0);
 }
