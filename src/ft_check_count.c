@@ -6,7 +6,7 @@
 /*   By: mohel-mo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/12 10:46:51 by mohel-mo          #+#    #+#             */
-/*   Updated: 2025/04/12 11:14:22 by mohel-mo         ###   ########.fr       */
+/*   Updated: 2025/04/12 11:15:20 by mohel-mo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,6 @@ void	ft_set_value(t_map *map, char c)
 		map->e++;
 	else if (c == 'C')
 		map->c++;
-}
-
-void	print_values(t_map *map)
-{
-	ft_printf("p: %d\n", map->p);
-	ft_printf("e: %d\n", map->e);
-	ft_printf("c: %d\n", map->c);
 }
 
 void	ft_count_chars(t_map *map)
@@ -45,7 +38,6 @@ void	ft_count_chars(t_map *map)
 		}
 		i++;
 	}
-	print_values(map);
 }
 
 void	ft_check_chars(t_map *map)
