@@ -2,3 +2,24 @@
 + test with these maps:
 
 	1, empty map, absolutly nothing in it!
+
+
+___________
+
+we can have a file called parsing that has the function parse
+	that does the job the main function is doing right now! 
+
+=> what will this function need? 
+
+
+
+
+___________
+
+that case where the map is not valid asat exit function 
+	needs to be imported from the ft_exit file i think!
+
+	and if that file gets too big (more than 5 functions)
+
+	make if a directory called errors and have all the error 
+		handling and exiting functions in there!

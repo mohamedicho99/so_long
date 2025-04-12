@@ -22,7 +22,6 @@ static int	ft_strlenn(const char *s)
 	return (i);
 }
 
-// call it just before 
 void	ft_isempty_map(t_map *map)
 {
 	if (map->y == 0)
@@ -36,6 +35,7 @@ void	free_wrong_shape(t_map *map)
 {
 	int i;
 
+	ft_printf("{!} Map not valid!\n");
 	i = 0;
 	while (i < map->y)
 	{
@@ -53,21 +53,13 @@ void	ft_check_shape(t_map *map)
 	int len;
 
 	map->x = ft_strlenn(map->map[0]);
-	ft_printf("re: %d\n", map->x);
 	i = 0;
 	len = 0;
 	while (map->map[i])
 	{
 		len = ft_strlenn(map->map[i]);
-		ft_printf("len: %d\n", len);
 		if (len != (map->x))
-		{
-			ft_printf("{!} map not valid asat!\n");
 			free_wrong_shape(map);
-		}
 		i++;
 	}
 }
-
-// check if the map is empty or not before even doing this!
-// free any pointers allocated until that point before exiting! 
