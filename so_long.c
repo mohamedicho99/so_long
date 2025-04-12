@@ -8,7 +8,7 @@ void	ft_quit_2(t_map *map)
 	exit(1);
 }
 
-// write a function that counts the rows
+// write a function that counts the rows (done)
 // write a function that sets as much of them rows to char pointers 
 // write a function that 
 // learn how to solve every problem from a peer of yours 
@@ -29,8 +29,11 @@ void	ft_count_rows(char *s, t_map *map)
 	while (line)
 	{
 		line = get_next_line(fd);
-		map->y++;
+		//ft_printf("%s", line);
 		free(line);
+		if (line == NULL)
+			break;
+		map->y++;
 	}
 	// ft_printf("re: %d\n", map->y);
 	close(fd);
@@ -95,6 +98,7 @@ int main(int argc, char **argv)
 	ft_count_rows(s, map);
 	ft_alloc_rows(map, s);
 	print_map(map);
+	ft_printf("rows: %d\n", map->y);
 
 	free(map);
 	return (0);

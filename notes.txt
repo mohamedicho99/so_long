@@ -1,0 +1,5 @@
+check out that y, even in a valid map! it gives you the actual
+	number of lines in the map + 1! why is that?
+
+that last line is null! check out what happens if we add a condition in there
+	to break once we hit it!
