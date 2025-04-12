@@ -15,3 +15,8 @@ i want to read from a file a map
 
 and i just want to read everything at this point
 	=> let's just do this first and then check that we have no leaks
+
+
+__________________________ more checks 
+check if you have at least one player , one collectable, one exit!
+check if you have more than one player and one exit

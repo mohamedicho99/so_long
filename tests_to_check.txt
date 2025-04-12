@@ -2,7 +2,8 @@
 + test with these maps:
 
 	1, empty map, absolutly nothing in it!
-
+	2, valid map with \n in the middle
+	3, valid map with 1 \n at the end
 
 ___________
 

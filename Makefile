@@ -5,6 +5,7 @@ SRC = so_long.c \
 	  src/ft_check_ext.c \
 	  src/ft_check_shape.c \
 	  src/ft_exit.c \
+	  src/ft_wall.c \
 	  src/ft_check_resources.c \
 	  src/parsing.c \
 	  gnl/get_next_line.c \
