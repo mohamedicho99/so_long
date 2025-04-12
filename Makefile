@@ -3,6 +3,8 @@ CC = cc
 HEADER = so_long.h
 SRC = so_long.c \
 	  src/ft_check_ext.c \
+	  src/ft_check_shape.c \
+	  src/ft_exit.c \
 	  gnl/get_next_line.c \
 	  gnl/get_next_line_utils.c
 LIBFT = libft.a

@@ -8,12 +8,6 @@ void	ft_quit_2(t_map *map)
 	exit(1);
 }
 
-// write a function that counts the rows (done)
-// write a function that sets as much of them rows to char pointers 
-// write a function that 
-// learn how to solve every problem from a peer of yours 
-// ask ayoub to explain the whole thing with tldraw
-
 void	ft_count_rows(char *s, t_map *map)
 {
 	int fd = open(s, O_RDONLY);
@@ -96,9 +90,11 @@ int main(int argc, char **argv)
 	ft_check_ext(s);
 	ft_set_values(map);
 	ft_count_rows(s, map);
+	ft_isempty_map(map);
 	ft_alloc_rows(map, s);
+	ft_check_shape(map);
 	print_map(map);
-	ft_printf("rows: %d\n", map->y);
+
 
 	free(map);
 	return (0);

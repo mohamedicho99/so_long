@@ -3,3 +3,8 @@ check out that y, even in a valid map! it gives you the actual
 
 that last line is null! check out what happens if we add a condition in there
 	to break once we hit it!
+
+when should we check if the map is empty or not?
+
+how about a function that frees everything and just called it ft_exit
+	

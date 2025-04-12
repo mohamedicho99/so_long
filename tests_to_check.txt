@@ -1,0 +1,4 @@
+
++ test with these maps:
+
+	1, empty map, absolutly nothing in it!
