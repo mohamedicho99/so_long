@@ -81,4 +81,5 @@ void	ft_parse(t_map *map, char *s)
 	ft_isempty_map(map);
 	ft_alloc_rows(map, s);
 	ft_check_shape(map);
+	ft_valid_chars(map);
 }
