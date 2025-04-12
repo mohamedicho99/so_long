@@ -25,6 +25,21 @@ void	print_map(t_map *map)
 	free(map);
 }
 
+static void	normal_exit(t_map *map)
+{
+	int	i;
+
+	i = 0;
+	while (map->map[i])
+	{
+		free(map->map[i]);
+		i++;
+	}
+	free(map->map);
+	free(map);
+	exit(0);
+}
+
 int main(int argc, char **argv)
 {
 	t_map *map;
@@ -38,6 +53,6 @@ int main(int argc, char **argv)
 	char *s = argv[1];
 	ft_parse(map, s);
 	//print_map(map);
-	free_map(map);
+	normal_exit(map);
 	return (0);
 }
