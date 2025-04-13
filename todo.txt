@@ -28,3 +28,21 @@ _____________________________
 		exit 
 	if (P == 0 || C == 0 || E == 0)
 		exit
+
+_____________________________
+
+rida's advice
+	-> understand and implement dynamic array
+	(cause you'll need it future projects!)
+	-> if not
+		use recursion but limit the map! 
+
+
+_____________________ checklist
+
++ make a copy of that map
+	for every line you strup that line
+	if that fails free everything before you exit(1)
+	if success:
+		find the player
+			(have the player_x and player_y first on struct)

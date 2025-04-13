@@ -46,6 +46,8 @@ void	ft_set_values(t_map *map)
 	map->p = 0;
 	map->e = 0;
 	map->c = 0;
+	map->p_x = 0;
+	map->p_y = 0;
 	map->map = NULL;
 }
 

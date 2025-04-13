@@ -13,6 +13,8 @@ typedef struct v_map
 	int c;
 	int e;
 	int p;
+	int p_x;
+	int p_y;
 } t_map;
 
 void	ft_check_ext(const char *s);
