@@ -27,5 +27,6 @@ void	ft_check_wall(t_map *map);
 void	free_map(t_map *map);
 void	ft_count_chars(t_map *map);
 void	ft_check_chars(t_map *map);
+void	ft_validate_path(t_map *map);
 
 #endif

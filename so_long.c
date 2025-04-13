@@ -18,11 +18,11 @@ void	print_map(t_map *map)
 	while (map->map[i])
 	{
 		ft_printf("%s", map->map[i]);
-		free(map->map[i]);
+		//free(map->map[i]);
 		i++;
 	}
-	free(map->map);
-	free(map);
+	//free(map->map);
+	//free(map);
 }
 
 static void	normal_exit(t_map *map)
@@ -52,7 +52,8 @@ int main(int argc, char **argv)
 	}
 	char *s = argv[1];
 	ft_parse(map, s);
-	//print_map(map);
+	print_map(map);
+	ft_printf("\n");
 	normal_exit(map);
 	return (0);
 }

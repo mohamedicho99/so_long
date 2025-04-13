@@ -90,4 +90,5 @@ void	ft_parse(t_map *map, char *s)
 	ft_check_wall(map);
 	ft_count_chars(map);
 	ft_check_chars(map);
+	ft_validate_path(map);
 }
