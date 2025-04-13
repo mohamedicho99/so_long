@@ -66,6 +66,15 @@ static void	free_copy(char **map)
 	free(map);
 }
 
+void	print_map(char **map)
+{
+	int i = 0;
+	while (map[i])
+	{
+		ft_printf("%s", map[i]);
+		i++;
+	}
+}
 
 void	ft_validate_path(t_map *map)
 {
@@ -85,6 +94,7 @@ void	ft_validate_path(t_map *map)
 		i++;
 	}
 
-	free_copy(map_copy);
+	print_map(map_copy);
 	find_player(map);
+	free_copy(map_copy);
 }

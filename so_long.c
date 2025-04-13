@@ -12,9 +12,10 @@
 
 #include "so_long.h"
 
-void	print_map(t_map *map)
+static void	print_map(t_map *map)
 {
 	int i = 0;
+	ft_printf("original: \n");
 	while (map->map[i])
 	{
 		ft_printf("%s", map->map[i]);
@@ -52,6 +53,7 @@ int main(int argc, char **argv)
 	}
 	char *s = argv[1];
 	ft_parse(map, s);
+	ft_printf("\n");
 	print_map(map);
 	ft_printf("\n");
 	normal_exit(map);
