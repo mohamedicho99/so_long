@@ -8,6 +8,7 @@
 typedef struct v_map
 {
 	char **map;
+	char **map_copy;
 	int x;
 	int y;
 	int c;
@@ -28,5 +29,9 @@ void	free_map(t_map *map);
 void	ft_count_chars(t_map *map);
 void	ft_check_chars(t_map *map);
 void	ft_validate_path(t_map *map);
+void	ft_flood_fill(t_map *map, int x, int y, char t);
+void	ft_look_for_c(t_map *map);
+int		is_exit_valid(t_map *map);
+void	free_copy(char **map);
 
 #endif

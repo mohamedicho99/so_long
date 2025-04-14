@@ -53,7 +53,7 @@ void	ft_failed(t_map *map, char **map_copy, int i)
 	free_map(map);
 }
 
-static void	free_copy(char **map)
+void	free_copy(char **map)
 {
 	int	i;
 
@@ -64,8 +64,10 @@ static void	free_copy(char **map)
 		i++;
 	}
 	free(map);
+	map = NULL;
 }
 
+/*
 void	print_map(char **map)
 {
 	int i = 0;
@@ -75,26 +77,44 @@ void	print_map(char **map)
 		i++;
 	}
 }
+*/
 
-void	ft_validate_path(t_map *map)
+void	ft_update_copy(t_map *map)
 {
-	char	**map_copy;
-	int		i;
+	int i;
 
-	map_copy = malloc(sizeof(char*) * (map->y + 1));
-	if (!map_copy)
+	i = 0;
+	if (map->map_copy)
+		free_copy(map->map_copy);
+	map->map_copy = malloc(sizeof(char*) * (map->y + 1));
+	if (!map->map_copy)
 		ft_failed(map, NULL, 0);
-	map_copy[map->y] = NULL;
+	map->map_copy[map->y] = NULL;
 	i = 0;
 	while (i < map->y)
 	{
-		map_copy[i] = ft_strdup(map->map[i]);
-		if (!map_copy[i])
-			ft_failed(map, map_copy, i);
+		map->map_copy[i] = ft_strdup(map->map[i]);
+		if (!map->map_copy[i])
+			ft_failed(map, map->map_copy, i);
 		i++;
 	}
+}
 
-	print_map(map_copy);
+void	ft_validate_path(t_map *map)
+{
+	ft_update_copy(map);
 	find_player(map);
-	free_copy(map_copy);
+	ft_flood_fill(map, map->p_x, map->p_y, 'E');
+	ft_look_for_c(map);
+	ft_update_copy(map);
+	ft_flood_fill(map, map->p_x, map->p_y, '9');
+	//print_map(map->map_copy);
+	if (!is_exit_valid(map))
+	{
+		ft_printf("{!} Invalid map... Can't reach Exit\n");
+		free_copy(map->map_copy);
+		free_map(map);
+		exit(1);
+	}
+	free_copy(map->map_copy);
 }

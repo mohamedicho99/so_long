@@ -49,6 +49,7 @@ void	ft_set_values(t_map *map)
 	map->p_x = 0;
 	map->p_y = 0;
 	map->map = NULL;
+	map->map_copy = NULL;
 }
 
 void	ft_alloc_rows(t_map *map, char *s)

@@ -41,8 +41,24 @@ rida's advice
 _____________________ checklist
 
 + make a copy of that map
-	for every line you strup that line
-	if that fails free everything before you exit(1)
-	if success:
-		find the player
-			(have the player_x and player_y first on struct)
++ find the player
++ flood fill that map, unless: 
+	you exit the map or
+	you come across 1 or X or E
+
+	-> every column you come across in flood fill 
+		turn it into X!
+(in this flood fill checek for both the C and E)
+flood fill everything but E first and check if you find any C:
+	then not valid!
+flood fill again E included and check if you still have an E:
+	if so, then not valid!
+
+____________________________
++ check if the path is valid, by checking if flood if successfully filled 
+	everything on the map but the walls!
+	so we check if we can find a collectible and an exit!
+
+have a flood fill function that has a char to look for other than 1 and X, so:
+	either E or C!
+have another one that's called look for that takes in either E or C
