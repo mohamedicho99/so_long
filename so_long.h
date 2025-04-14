@@ -4,6 +4,7 @@
 #include "libft/libft.h"
 #include "ft_printf/ft_printf.h"
 #include "gnl/get_next_line.h"
+#include "mlx_linux/mlx.h"
 
 typedef struct v_map
 {

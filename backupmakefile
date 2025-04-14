@@ -17,15 +17,10 @@ LIBFT = libft.a
 FT_PRINTF = libftprintf.a
 FT_PRINTF_DIR = ft_printf
 LIBFT_DIR = libft
-# Added MLX variables
-MLX_DIR = mlx_linux
-MLX = $(MLX_DIR)/libmlx.a
 CFLAGS = -Werror -Wextra -Wall
 OBJ = $(SRC:.c=.o)
 
-.SECONDARY: $(OBJ)
-
-all: $(FT_PRINTF) $(LIBFT) $(MLX) $(NAME)
+all: $(FT_PRINTF) $(LIBFT) $(NAME)
 
 %.o: %.c
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -36,18 +31,13 @@ $(LIBFT):
 $(FT_PRINTF):
 	@make -C $(FT_PRINTF_DIR)
 
-# Added MLX build target
-$(MLX):
-	@make -C $(MLX_DIR)
-
 $(NAME): $(OBJ)
-	@$(CC) $(OBJ) -L$(LIBFT_DIR) -lft -L$(FT_PRINTF_DIR) -lftprintf -L$(MLX_DIR) -lmlx -L/usr/lib -I$(MLX_DIR) -lXext -lX11 -lm -lz -o $(NAME)
+	@$(CC) $(OBJ) -L$(LIBFT_DIR) -lft -L$(FT_PRINTF_DIR) -lftprintf -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	@rm -f $(OBJ)
 	@make -C $(LIBFT_DIR) clean
 	@make -C $(FT_PRINTF_DIR) clean
-	@make -C $(MLX_DIR) clean
 
 fclean: clean
 	@rm -f $(NAME)
