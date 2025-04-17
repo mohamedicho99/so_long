@@ -1,0 +1,10 @@
+
+
+-> current problem:
+
+	allocate all the pointers for them images
+		use mlx xpm file to image to load all the textures
+
+	check the pointers returned with the NULL
+
+	free everything and exit 
