@@ -37,8 +37,9 @@ void	init_program(t_map *map)
 		close_window(&data);
 	data.win = mlx_new_window(data.mlx, map->x * TILE_SIZE, map->y * TILE_SIZE, "So_Long!");
 	load_textures(&data);
-	// render_map(&data);
+	render_map(&data);
 	mlx_hook(data.win, 2, 1L<<0, key_hook, &data);
 	mlx_hook(data.win, 17, 1L<<17, close_window, &data);
+	//mlx_loop_hook(data.mlx, render_map, &data);
 	mlx_loop(data.mlx);
 }

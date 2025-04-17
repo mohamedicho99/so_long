@@ -7,7 +7,7 @@
 #include "mlx_linux/mlx.h"
 
 #define ESC 65307
-#define TILE_SIZE 32
+#define TILE_SIZE 60
 
 typedef struct v_map
 {
@@ -55,5 +55,6 @@ void	init_program(t_map *map);
 void	destroy_images(t_data *data);
 void	load_textures(t_data *data);
 int		key_hook(int keycod, t_data *data);
+int		render_map(t_data *data);
 
 #endif

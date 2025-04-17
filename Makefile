@@ -3,6 +3,7 @@ CC = cc
 HEADER = so_long.h
 SRC = so_long.c \
 	  src/init_program.c \
+	  src/rendering.c \
 	  src/normal_exit.c \
 	  src/handle_textures.c \
 	  src/ft_check_ext.c \
