@@ -35,7 +35,15 @@ void	check_loading(t_data *data)
 
 int	key_hook(int keycode, t_data *data)
 {
-	if (keycode == ESC)
+	if (keycode == KEY_W || keycode == ARROW_UP)
+		ft_printf("going up!\n");
+	else if (keycode == KEY_A || keycode == ARROW_LEFT)
+		ft_printf("going left!\n");
+	else if (keycode == KEY_S || keycode == ARROW_DOWN)
+		ft_printf("going down\n");
+	else if (keycode == KEY_D || keycode == ARROW_RIGHT)
+		ft_printf("going right\n");
+	else if (keycode == ESC)
 	{
 		destroy_images(data);
 		mlx_destroy_window(data->mlx, data->win);

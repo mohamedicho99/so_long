@@ -8,6 +8,14 @@
 
 #define ESC 65307
 #define TILE_SIZE 60
+#define KEY_W 119
+#define KEY_A 97
+#define KEY_S 115
+#define KEY_D 100
+#define ARROW_UP 65362
+#define ARROW_DOWN 65364 
+#define ARROW_LEFT 65361
+#define ARROW_RIGHT 65363
 
 typedef struct v_map
 {
