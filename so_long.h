@@ -42,6 +42,15 @@ typedef struct v_map
 	int		p_y;
 }			t_map;
 
+typedef struct norm
+{
+	char *s;
+	char *p;
+	char *t;
+	char *tmp;
+	t_map *map;
+}	t_norm;
+
 typedef struct s_data
 {
 	t_map	*map;
@@ -55,7 +64,7 @@ typedef struct s_data
 	char	*addr;
 }			t_data;
 
-void	ft_check_ext(const char *s);
+void	ft_check_ext(const char *s, t_map *map);
 void	ft_check_shape(t_map *map);
 void	ft_isempty_map(t_map *map);
 void	ft_exit(t_map *map);

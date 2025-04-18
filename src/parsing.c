@@ -80,7 +80,7 @@ void	ft_alloc_rows(t_map *map, char *s)
 
 void	ft_parse(t_map *map, char *s)
 {
-	ft_check_ext(s);
+	ft_check_ext(s, map);
 	ft_set_values(map);
 	ft_count_rows(s, map);
 	ft_isempty_map(map);
