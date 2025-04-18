@@ -42,15 +42,6 @@ typedef struct v_map
 	int		p_y;
 }			t_map;
 
-typedef struct norm
-{
-	char *s;
-	char *p;
-	char *t;
-	char *tmp;
-	t_map *map;
-}	t_norm;
-
 typedef struct s_data
 {
 	t_map	*map;

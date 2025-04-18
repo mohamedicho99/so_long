@@ -19,23 +19,23 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-int ends_with(char *s, char *target)
+int	ends_with(char *s, char *target)
 {
-	int target_len;
-	int s_len;
+	int	target_len;
+	int	s_len;
 
 	s_len = ft_strlen(s) - 1;
 	target_len = ft_strlen(target) - 1;
 	if (target_len <= 0 || s_len <= 0)
-		return 0;
-	while (target_len >= 0 && s_len >= 0 )
+		return (0);
+	while (target_len >= 0 && s_len >= 0)
 	{
 		if (s[s_len] != target[target_len])
-			return 0;
+			return (0);
 		s_len--;
 		target_len--;
 	}
-	return 1;
+	return (1);
 }
 
 void	ft_check_ext(const char *s, t_map *map)

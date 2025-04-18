@@ -23,7 +23,6 @@ void	normal_exit(t_map *map)
 		i++;
 	}
 	free(map->map);
-	//free(map);
 	exit(0);
 }
 
