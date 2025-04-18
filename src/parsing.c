@@ -12,13 +12,6 @@
 
 #include "../so_long.h"
 
-void	ft_quit_2(t_map *map)
-{
-	ft_printf("{-} Invalid map!\n");
-	free(map);
-	exit(1);
-}
-
 void	ft_count_rows(char *s, t_map *map)
 {
 	char	*line;
@@ -26,7 +19,10 @@ void	ft_count_rows(char *s, t_map *map)
 
 	fd = open(s, O_RDONLY);
 	if (fd < 0)
-		ft_quit_2(map);
+	{
+		ft_printf("{-} Invalid map file!\n");
+		exit(1);
+	}
 	map->y = 0;
 	while (1)
 	{
@@ -37,19 +33,6 @@ void	ft_count_rows(char *s, t_map *map)
 		map->y++;
 	}
 	close(fd);
-}
-
-void	ft_set_values(t_map *map)
-{
-	map->y = 0;
-	map->x = 0;
-	map->p = 0;
-	map->e = 0;
-	map->c = 0;
-	map->p_x = 0;
-	map->p_y = 0;
-	map->map = NULL;
-	map->map_copy = NULL;
 }
 
 void	ft_alloc_rows(t_map *map, char *s)
@@ -81,7 +64,6 @@ void	ft_alloc_rows(t_map *map, char *s)
 void	ft_parse(t_map *map, char *s)
 {
 	ft_check_ext(s, map);
-	ft_set_values(map);
 	ft_count_rows(s, map);
 	ft_isempty_map(map);
 	ft_alloc_rows(map, s);

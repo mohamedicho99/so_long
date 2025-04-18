@@ -19,60 +19,31 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-void	ft_quit_1(t_norm *here)
+int ends_with(char *s, char *target)
 {
-	ft_printf("{+} Please provide a valid map!\n");
-	if (here->map)
-		free(here->map);
-	if (here->tmp)
-		free(here->tmp);
-	exit(1);
-}
+	int target_len;
+	int s_len;
 
-void	ft_finish_check(t_norm *here)
-{
-	int	s_len;
-
-	if (*here->p != '\0' || *here->t != '\0')
-		ft_quit_1(here);
-	s_len = ft_strlen(here->s);
-	if (s_len == 4)
-		ft_quit_1(here);
-	here->p = ft_strchr(here->s, '.');
-	if (s_len > 4)
+	s_len = ft_strlen(s) - 1;
+	target_len = ft_strlen(target) - 1;
+	if (target_len <= 0 || s_len <= 0)
+		return 0;
+	while (target_len >= 0 && s_len >= 0 )
 	{
-		(*(here->p))--;
-		if (*here->p == '/')
-			ft_quit_1(here);
+		if (s[s_len] != target[target_len])
+			return 0;
+		s_len--;
+		target_len--;
 	}
-	free(here->tmp);
+	return 1;
 }
 
 void	ft_check_ext(const char *s, t_map *map)
 {
-	char	*p;
-	char	*t;
-	char	*tmp;
-	t_norm	here;
-
-	t = ft_strdup(".ber");
-	tmp = t;
-	p = ft_strchr(s, '.');
-	if (!p)
-		ft_quit_1(&here);
-	while (*p && *t)
+	(void)map;
+	if (!ends_with((char *)s, ".ber"))
 	{
-		if (*p != *t)
-			ft_quit_1(&here);
-		t++;
-		p++;
+		ft_printf("{-} Invalid map file!\n");
+		exit(1);
 	}
-	while (ft_isspace(*p))
-		p++;
-	here.p = p;
-	here.t = t;
-	here.tmp = tmp;
-	here.s = (char *)s;
-	here.map = map;
-	ft_finish_check(&here);
 }

@@ -14,7 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_map	*map;
+	t_map	map;
 	char	*s;
 
 	if (argc != 2)
@@ -22,10 +22,9 @@ int	main(int argc, char **argv)
 		ft_printf("{+} Please, provide the correct number of arguments!\n");
 		exit(1);
 	}
-	map = malloc(sizeof(t_map));
 	s = argv[1];
-	ft_parse(map, s);
-	init_program(map);
-	normal_exit(map);
+	map = (t_map){0};
+	ft_parse(&map, s);
+	init_program(&map);
 	return (0);
 }
