@@ -19,11 +19,13 @@ int	ft_isspace(int c)
 	return (0);
 }
 
-void	ft_quit_1(char *s, t_map *map)
+void	ft_quit_1(t_norm *here)
 {
 	ft_printf("{+} Please provide a valid map!\n");
-	(void)s;
-	free(map);
+	if (here->map)
+		free(here->map);
+	if (here->tmp)
+		free(here->tmp);
 	exit(1);
 }
 
@@ -32,16 +34,16 @@ void	ft_finish_check(t_norm *here)
 	int	s_len;
 
 	if (*here->p != '\0' || *here->t != '\0')
-		ft_quit_1(here->tmp, here->map);
+		ft_quit_1(here);
 	s_len = ft_strlen(here->s);
 	if (s_len == 4)
-		ft_quit_1(here->tmp, here->map);
+		ft_quit_1(here);
 	here->p = ft_strchr(here->s, '.');
 	if (s_len > 4)
 	{
 		(*(here->p))--;
 		if (*here->p == '/')
-			ft_quit_1(here->tmp, here->map);
+			ft_quit_1(here);
 	}
 	free(here->tmp);
 }
@@ -57,11 +59,11 @@ void	ft_check_ext(const char *s, t_map *map)
 	tmp = t;
 	p = ft_strchr(s, '.');
 	if (!p)
-		ft_quit_1(tmp, map);
+		ft_quit_1(&here);
 	while (*p && *t)
 	{
 		if (*p != *t)
-			ft_quit_1(tmp, map);
+			ft_quit_1(&here);
 		t++;
 		p++;
 	}
