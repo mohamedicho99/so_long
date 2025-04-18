@@ -21,8 +21,8 @@ void	ft_quit_2(t_map *map)
 
 void	ft_count_rows(char *s, t_map *map)
 {
-	char *line;
-	int fd;
+	char	*line;
+	int		fd;
 
 	fd = open(s, O_RDONLY);
 	if (fd < 0)
@@ -33,7 +33,7 @@ void	ft_count_rows(char *s, t_map *map)
 		line = get_next_line(fd);
 		free(line);
 		if (line == NULL)
-			break;
+			break ;
 		map->y++;
 	}
 	close(fd);
@@ -60,7 +60,7 @@ void	ft_alloc_rows(t_map *map, char *s)
 
 	fd = open(s, O_RDONLY);
 	i = 0;
-	map->map = malloc(sizeof(char*) * (map->y + 1));
+	map->map = malloc(sizeof(char *) * (map->y + 1));
 	if (!map->map)
 	{
 		free(map);
@@ -77,7 +77,6 @@ void	ft_alloc_rows(t_map *map, char *s)
 	map->map[i] = NULL;
 	close(fd);
 }
-
 
 void	ft_parse(t_map *map, char *s)
 {

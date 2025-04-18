@@ -14,7 +14,7 @@
 
 static int	ft_strlenn(const char *s)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (s[i] && s[i] != '\n')
@@ -33,7 +33,7 @@ void	ft_isempty_map(t_map *map)
 
 void	free_wrong_shape(t_map *map)
 {
-	int i;
+	int	i;
 
 	ft_printf("{!} Map not valid!\n");
 	i = 0;
@@ -50,7 +50,7 @@ void	free_wrong_shape(t_map *map)
 void	ft_check_shape(t_map *map)
 {
 	int	i;
-	int len;
+	int	len;
 
 	map->x = ft_strlenn(map->map[0]);
 	i = 0;
