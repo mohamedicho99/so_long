@@ -64,5 +64,7 @@ void	destroy_images(t_data *data);
 void	load_textures(t_data *data);
 int		key_hook(int keycod, t_data *data);
 int		render_map(t_data *data);
+void	move_player(t_data *data, int x, int y);
+void	destroy_everything(t_data *data);
 
 #endif

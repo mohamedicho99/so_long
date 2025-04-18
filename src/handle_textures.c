@@ -24,6 +24,8 @@ void	destroy_images(t_data *data)
 		mlx_destroy_image(data->mlx, data->player);
 	if (data->coin)
 		mlx_destroy_image(data->mlx, data->coin);
+	destroy_everything(data);
+	normal_exit(data->map);
 }
 
 void	check_loading(t_data *data)
@@ -36,13 +38,13 @@ void	check_loading(t_data *data)
 int	key_hook(int keycode, t_data *data)
 {
 	if (keycode == KEY_W || keycode == ARROW_UP)
-		ft_printf("going up!\n");
+		move_player(data, data->map->p_x, data->map->p_y - 1);
 	else if (keycode == KEY_A || keycode == ARROW_LEFT)
-		ft_printf("going left!\n");
+		move_player(data, data->map->p_x - 1, data->map->p_y);
 	else if (keycode == KEY_S || keycode == ARROW_DOWN)
-		ft_printf("going down\n");
+		move_player(data, data->map->p_x, data->map->p_y + 1);
 	else if (keycode == KEY_D || keycode == ARROW_RIGHT)
-		ft_printf("going right\n");
+		move_player(data, data->map->p_x + 1, data->map->p_y);
 	else if (keycode == ESC)
 	{
 		destroy_images(data);
