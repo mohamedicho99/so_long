@@ -17,14 +17,12 @@ void	ft_exit(t_map *map)
 	int	i;
 
 	i = 0;
-	if (map && map->map)
+	if (map->map)
 	{
 		while (map->map[i])
 			free(map->map[i]);
 		free(map->map);
 	}
-	if (map)
-		free(map);
 	ft_printf("{+} Exiting program!\n");
 	exit(1);
 }

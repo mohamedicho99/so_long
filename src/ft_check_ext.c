@@ -35,6 +35,8 @@ int	ends_with(char *s, char *target)
 		s_len--;
 		target_len--;
 	}
+	if (s[s_len] == '/')
+		return (0);
 	return (1);
 }
 

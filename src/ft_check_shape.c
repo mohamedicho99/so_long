@@ -43,7 +43,6 @@ void	free_wrong_shape(t_map *map)
 		i++;
 	}
 	free(map->map);
-	free(map);
 	exit(1);
 }
 
