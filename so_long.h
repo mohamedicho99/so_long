@@ -1,38 +1,50 @@
-#ifndef SO_LONG_h
-#define SO_LONG_h 
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mohel-mo <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/18 08:40:55 by mohel-mo          #+#    #+#             */
+/*   Updated: 2025/04/18 08:40:57 by mohel-mo         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include "libft/libft.h"
-#include "ft_printf/ft_printf.h"
-#include "gnl/get_next_line.h"
-#include "mlx_linux/mlx.h"
+#ifndef SO_LONG_H
+# define SO_LONG_H 
 
-#define ESC 65307
-#define TILE_SIZE 60
-#define KEY_W 119
-#define KEY_A 97
-#define KEY_S 115
-#define KEY_D 100
-#define ARROW_UP 65362
-#define ARROW_DOWN 65364 
-#define ARROW_LEFT 65361
-#define ARROW_RIGHT 65363
+# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
+# include "gnl/get_next_line.h"
+# include "mlx_linux/mlx.h"
+
+# define ESC 65307
+# define TILE_SIZE 60
+# define KEY_W 119
+# define KEY_A 97
+# define KEY_S 115
+# define KEY_D 100
+# define ARROW_UP 65362
+# define ARROW_DOWN 65364 
+# define ARROW_LEFT 65361
+# define ARROW_RIGHT 65363
 
 typedef struct v_map
 {
-	char **map;
-	char **map_copy;
-	int x;
-	int y;
-	int c;
-	int e;
-	int p;
-	int p_x;
-	int p_y;
-} t_map;
+	char	**map;
+	char	**map_copy;
+	int		x;
+	int		y;
+	int		c;
+	int		e;
+	int		p;
+	int		p_x;
+	int		p_y;
+}			t_map;
 
 typedef struct s_data
 {
-	t_map *map;
+	t_map	*map;
 	void	*wall;
 	void	*coin;
 	void	*door;
@@ -40,7 +52,7 @@ typedef struct s_data
 	void	*player;
 	void	*mlx;
 	void	*win;
-	char 	*addr;
+	char	*addr;
 }			t_data;
 
 void	ft_check_ext(const char *s);

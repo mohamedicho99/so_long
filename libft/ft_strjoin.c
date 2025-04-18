@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_strlcpy(newstr, s1, s1_len + 1);
 	ft_strlcat(newstr, s2, s2_len + s1_len + 1);
-	free((char*)s2);
-	free((char*)s1);
+	free((char *)s2);
+	free((char *)s1);
 	return (newstr);
 }
