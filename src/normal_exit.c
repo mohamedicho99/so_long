@@ -29,7 +29,6 @@ void	normal_exit(t_map *map)
 
 void	destroy_everything(t_data *data)
 {
-	//destroy_images(data);
 	mlx_destroy_window(data->mlx, data->win);
 	mlx_destroy_display(data->mlx);
 	free(data->mlx);

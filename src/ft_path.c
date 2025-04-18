@@ -81,12 +81,12 @@ void	print_map(char **map)
 
 void	ft_update_copy(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (map->map_copy)
 		free_copy(map->map_copy);
-	map->map_copy = malloc(sizeof(char*) * (map->y + 1));
+	map->map_copy = malloc(sizeof(char *) * (map->y + 1));
 	if (!map->map_copy)
 		ft_failed(map, NULL, 0);
 	map->map_copy[map->y] = NULL;
@@ -108,7 +108,6 @@ void	ft_validate_path(t_map *map)
 	ft_look_for_c(map);
 	ft_update_copy(map);
 	ft_flood_fill(map, map->p_x, map->p_y, '9');
-	//print_map(map->map_copy);
 	if (!is_exit_valid(map))
 	{
 		ft_printf("{!} Invalid map... Can't reach Exit\n");

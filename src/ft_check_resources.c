@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-static int ft_is_valid(char c)
+static int	ft_is_valid(char c)
 {
 	if (c == '0' || c == '1' || c == 'C' || c == 'P' || c == 'E' || c == '\n')
 		return (1);
@@ -21,7 +21,7 @@ static int ft_is_valid(char c)
 
 void	free_map(t_map *map)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (map->map[i])

@@ -14,7 +14,7 @@
 
 void	move_player(t_data *data, int x, int y)
 {
-	static int moves;
+	static int	moves;
 
 	if (data->map->map[y][x] == '1')
 		return ;
@@ -22,7 +22,7 @@ void	move_player(t_data *data, int x, int y)
 	{
 		if (!data->map->c)
 		{
-			ft_printf("Congrats! You won!");
+			ft_printf("Congrats! You won!\n");
 			destroy_images(data);
 		}
 		else

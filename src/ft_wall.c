@@ -12,7 +12,7 @@
 
 #include "../so_long.h"
 
-static int ft_check_line(char *s)
+static int	ft_check_line(char *s)
 {
 	int	i;
 

@@ -30,7 +30,7 @@ void	ft_count_chars(t_map *map)
 	i = 0;
 	while (map->map[i])
 	{
-		j = 0; 
+		j = 0;
 		while (map->map[i][j])
 		{
 			ft_set_value(map, map->map[i][j]);
